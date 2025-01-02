@@ -6,7 +6,7 @@ Welcome to FullStack Leveler! This project is designed to help university studen
 
 ## How It Works
 
-FullStack Leveler is structured into multiple sections, each containing lessons and exercises. The lessons provide theoretical knowledge, while the exercises reinforce the concepts through practical application. The course follows the Mastery Learning approach, ensuring that you master each topic before moving on to the next.
+FullStack Leveler is structured into multiple sections, each containing lessons and exercises. The lessons provide theoretical knowledge, while the exercises reinforce the concepts through practical application. The course follows the Project-base learning and Mastery Learning approach, ensuring that you master each topic before moving on to the next.
 
 ### Key Features
 
@@ -64,7 +64,7 @@ We welcome contributions from the community! Here are some ways you can contribu
 2. Clone your fork:
 
 ```bash
-git clone https://github.com/your-username/FullStackLeveler.git
+git clone https://github.com/Nikola-Limpet/FullStackLeveler.git
 cd FullStackLeveler
 ```
 
