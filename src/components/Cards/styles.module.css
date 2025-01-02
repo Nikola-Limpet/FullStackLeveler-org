@@ -1,0 +1,40 @@
+/* Remove scroll-related styles and keep only essential styles */
+:root {
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-sans: 'Inter', sans-serif;
+  --card-blur: 12px;
+  --transition-speed: 0.3s;
+}
+
+/* Typography */
+.font-heading {
+  font-family: var(--font-heading);
+  letter-spacing: -0.025em;
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+  letter-spacing: -0.01em;
+}
+
+/* Card animations */
+.card {
+  transition: all var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(var(--card-blur));
+  -webkit-backdrop-filter: blur(var(--card-blur));
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 10px 20px rgba(0, 0, 0, 0.1),
+    0 6px 6px rgba(0, 0, 0, 0.1),
+    0 0 100px -10px rgba(99, 102, 241, 0.3);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  :root {
+    --card-blur: 8px;
+  }
+}

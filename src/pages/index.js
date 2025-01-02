@@ -7,8 +7,7 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
 import TechStackDisplay from '../components/TechStackDisplay';
-import Quote from '../components/Quote';
-import Card from '../components/Cards';
+import Card from '../components/Cards/Cards';
 
 function HomepageHeader() {
   return (
@@ -78,7 +77,6 @@ export default function Home() {
         <TechStackDisplay />
         <HomepageFeatures />
         <Card />
-        <Quote />
       </main>
     </Layout>
   );
