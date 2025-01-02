@@ -1,0 +1,21 @@
+
+.featuresContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.featuresContainer p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  font-size: 1.2rem;
+  color: #fff;
+  font-family: 'Space Mono', serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.featuresContainer p:last-child {
+  margin-bottom: 0;
+}

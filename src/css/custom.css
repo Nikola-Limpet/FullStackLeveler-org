@@ -1,0 +1,322 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+@import './tailwind.css';
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #7c3aed;
+  --ifm-color-primary-dark: #6d28d9;
+  --ifm-color-primary-darker: #5b21b6;
+  --ifm-color-primary-darkest: #4c1d95;
+  --ifm-color-primary-light: #8b5cf6;
+  --ifm-color-primary-lighter: #a78bfa;
+  --ifm-color-primary-lightest: #c4b5fd;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --text-color: #333; /* Default text color for light mode */
+  --background-color: #fff; /* Default background color for light mode */
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #a78bfa;
+  --ifm-color-primary-dark: #8b5cf6;
+  --ifm-color-primary-darker: #7c3aed;
+  --ifm-color-primary-darkest: #6d28d9;
+  --ifm-color-primary-light: #c4b5fd;
+  --ifm-color-primary-lighter: #ddd6fe;
+  --ifm-color-primary-lightest: #ede9fe;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.4);
+  --navbar-background-color: #222; /* Darker background color for dark mode */
+  --navbar-text-color: #333; /* Light text color for dark mode */
+  --toc-background-color: rgba(
+    34,
+    34,
+    34,
+    0.9
+  ); /* Semi-transparent dark background */
+  --toc-link-color: #ddd6fe; /* Light text color for TOC links */
+  --toc-link-hover-bg: rgba(
+    124,
+    58,
+    237,
+    0.1
+  ); /* Light background color on hover */
+  --toc-link-focus-bg: rgba(
+    124,
+    58,
+    237,
+    0.2
+  ); /* Light background color on focus */
+  --toc-link-active-bg: rgba(124, 58, 237, 0.2); /* Active background color */
+  --toc-link-active-color: #a78bfa; /* Active text color */
+  --menu-link-color: #ddd6fe; /* Light text color for menu links */
+  --menu-link-hover-color: #a78bfa; /* Hover text color for menu links */
+  --menu-link-focus-color: #a78bfa; /* Focus text color for menu links */
+  --menu-link-active-color: #a78bfa; /* Active text color for menu links */
+  --text-color: #ddd6fe; /* Default text color for dark mode */
+  --background-color: #101828; /* Default background color for dark mode */
+}
+
+/* Light mode styles */
+body {
+  color: var(--text-color); /* Use variable for text color */
+  background-color: var(
+    --background-color
+  ); /* Use variable for background color */
+}
+
+.main-wrapper p {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--text-color); /* Use variable for text color */
+}
+[data-theme='dark'] .main-wrapper p {
+  color: whitesmoke; /* Use variable for text color */
+}
+
+/* Navbar styles */
+.navbar {
+  background-color: #101828; /* Dark background color */
+  color: #333; /* Light text color */
+  padding: 1.5rem 2rem; /* Padding for the navbar */
+  font-family: 'Nunito', serif;
+  font-optical-sizing: auto;
+  font-weight: 500; /* Adjust weight as needed */
+  font-style: normal;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* box-shadow: 0 4px 6px rgb(112, 108, 108); Subtle shadow */
+  box-shadow:
+    0 4px 6px rgba(255, 255, 255, 0.1),
+    0 1px 3px rgba(255, 255, 255, 0.08); /* Light and subtle shadow */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.navbar--fixed-top {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+[data-theme='dark'] .navbar {
+  background-color: var(--background-color); /* Use variable for dark mode */
+  color: var(--navbar-text-color); /* Use variable for dark mode */
+}
+
+/* Navbar brand/logo */
+.navbar__brand {
+  font-size: 1.5rem; /* Increase font size */
+  font-weight: bold; /* Bold text */
+  color: #fff; /* Light text color */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease; /* Smooth transition for color */
+}
+
+.navbar__brand:hover,
+.navbar__brand:focus {
+  color: #7c3aed; /* Change color on hover/focus */
+  outline: none; /* Remove default outline */
+}
+
+/* Navbar links */
+.navbar__link {
+  font-size: 1.2rem; /* Increase font size */
+  color: #fff; /* Light text color */
+  margin-left: 1.5rem; /* Space between links */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease; /* Smooth transition for color */
+}
+
+.navbar__link:hover,
+.navbar__link:focus {
+  color: #7c3aed; /* Change color on hover/focus */
+  outline: none; /* Remove default outline */
+}
+
+/* Navbar toggle button for mobile view */
+.navbar__toggle {
+  display: none; /* Hidden by default */
+  font-size: 1.5rem; /* Increase font size */
+  color: #fff; /* Light text color */
+  background: none; /* No background */
+  border: none; /* No border */
+  cursor: pointer; /* Pointer cursor */
+  transition: color 0.3s ease; /* Smooth transition for color */
+}
+
+.navbar__toggle:hover,
+.navbar__toggle:focus {
+  color: #7c3aed; /* Change color on hover/focus */
+  outline: none; /* Remove default outline */
+}
+
+/* Show the toggle button and hide links on small screens */
+@media (max-width: 768px) {
+  .navbar__toggle {
+    display: block; /* Show toggle button */
+  }
+
+  .navbar__links {
+    display: none; /* Hide links */
+  }
+
+  .navbar__links--open {
+    display: flex; /* Show links when open */
+    flex-direction: column; /* Stack links vertically */
+    background-color: #333; /* Dark background color */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 2rem; /* Padding for the links */
+  }
+
+  .navbar__link {
+    margin: 0.5rem 0; /* Space between links */
+  }
+}
+
+/* Increase the font size of the TOC elements */
+/* Style the TOC container */
+.table-of-contents {
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+  font-family: 'Akaya Kanadaka', serif;
+  font-weight: 400;
+  font-style: normal;
+  padding: 1.5rem; /* Increase padding */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin-bottom: 2rem; /* Space below the TOC */
+  font-size: 1.5rem; /* Increase font size */
+}
+
+[data-theme='dark'] .table-of-contents {
+  background-color: rgba(255, 255, 255, 0.2); /* Use variable for dark mode */
+}
+
+/* Style the TOC links */
+.table-of-contents__link {
+  font-size: 1.2rem; /* Increase the font size */
+  color: #333; /* Text color */
+  border-left: 4px solid transparent; /* Initial border color */
+  padding-left: 12px; /* Increase padding to the left */
+  display: block; /* Make links block elements */
+  margin-bottom: 0.75rem; /* Increase space between links */
+  transition: all 0.3s ease; /* Smooth transition for all properties */
+}
+
+[data-theme='dark'] .table-of-contents__link {
+  color: var(--toc-link-color); /* Use variable for dark mode */
+}
+
+/* Hover effect for TOC links */
+.table-of-contents__link:hover {
+  border-left-color: #7c3aed; /* Change border color on hover */
+  background-color: rgba(
+    124,
+    58,
+    237,
+    0.1
+  ); /* Light background color on hover */
+  color: #7c3aed; /* Change text color on hover */
+  padding-left: 1.25rem; /* Slightly increase padding on hover */
+}
+
+[data-theme='dark'] .table-of-contents__link:hover {
+  background-color: var(--toc-link-hover-bg); /* Use variable for dark mode */
+}
+
+/* Focus effect for accessibility */
+.table-of-contents__link:focus {
+  outline: none; /* Remove default outline */
+  border-left-color: #7c3aed; /* Change border color on focus */
+  background-color: rgba(
+    124,
+    58,
+    237,
+    0.2
+  ); /* Light background color on focus */
+  color: #7c3aed; /* Change text color on focus */
+  box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.5); /* Add focus ring */
+}
+
+[data-theme='dark'] .table-of-contents__link:focus {
+  background-color: var(--toc-link-focus-bg); /* Use variable for dark mode */
+}
+
+/* Active link style */
+.table-of-contents__link--active {
+  border-left-color: #7c3aed; /* Active border color */
+  background-color: rgba(124, 58, 237, 0.2); /* Active background color */
+  color: #7c3aed; /* Active text color */
+  font-weight: 600; /* Bold text for active link */
+}
+
+[data-theme='dark'] .table-of-contents__link--active {
+  background-color: var(--toc-link-active-bg); /* Use variable for dark mode */
+  color: var(--toc-link-active-color); /* Use variable for dark mode */
+}
+
+/* Style the menu links */
+.menu__link {
+  font-size: 1.2rem; /* Increase the font size */
+  color: #333; /* Text color */
+  font-weight: 400; /* Normal font weight */
+  border-left: 4px solid transparent; /* Initial border color */
+  padding: 0.75rem 1rem; /* Increase padding */
+  display: block; /* Make links block elements */
+  margin-bottom: 0.75rem; /* Increase space between links */
+  transition: all 0.3s ease; /* Smooth transition for all properties */
+  border-radius: 8px; /* Rounded corners */
+  text-decoration: none; /* Remove underline */
+}
+
+[data-theme='dark'] .menu__link {
+  color: var(--menu-link-color); /* Use variable for dark mode */
+}
+
+/* Hover effect for menu links */
+.menu__link:hover {
+  border-left-color: #7c3aed; /* Change border color on hover */
+  color: #7c3aed; /* Change text color on hover */
+  padding-left: 1.25rem; /* Slightly increase padding on hover */
+}
+
+[data-theme='dark'] .menu__link:hover {
+  color: var(--menu-link-hover-color); /* Use variable for dark mode */
+}
+
+/* Focus effect for accessibility */
+.menu__link:focus {
+  outline: none; /* Remove default outline */
+  border-left-color: #7c3aed; /* Change border color on focus */
+  color: #7c3aed; /* Change text color on focus */
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.5); /* Add focus ring */
+}
+
+[data-theme='dark'] .menu__link:focus {
+  color: var(--menu-link-focus-color); /* Use variable for dark mode */
+}
+
+/* Active link style */
+.menu__link--active {
+  border-left-color: #7c3aed; /* Active border color */
+  color: #7c3aed; /* Active text color */
+  font-weight: bold; /* Bold text for active link */
+}
+
+[data-theme='dark'] .menu__link--active {
+  color: var(--menu-link-active-color); /* Use variable for dark mode */
+}
+
+[data-theme='dark'] #__docusaurus {
+  background-color: #101828;
+}
