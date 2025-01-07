@@ -1,30 +1,78 @@
-import React from 'react';
-import { FaReact, FaNodeJs, FaDatabase } from 'react-icons/fa';
-import { SiMongodb, SiExpress, SiRedux, SiReactrouter, SiVite, SiReactquery } from 'react-icons/si';
-import styles from './styles.module.css';
-
-const techItems = [
-  { icon: <FaReact size={50} color="#61DBFB" />, name: 'React', link: 'https://reactjs.org/' },
-  { icon: <SiMongodb size={50} color="#47A248" />, name: 'MongoDB', link: 'https://www.mongodb.com/' },
-  { icon: <SiExpress size={50} color="#000000" />, name: 'Express', link: 'https://expressjs.com/' },
-  { icon: <FaNodeJs size={50} color="#339933" />, name: 'Node.js', link: 'https://nodejs.org/' },
-  { icon: <SiRedux size={50} color="#764ABC" />, name: 'Redux', link: 'https://redux.js.org/' },
-  { icon: <SiReactrouter size={50} color="#CA4245" />, name: 'React Router', link: 'https://reactrouter.com/' },
-  { icon: <SiVite size={50} color="#646CFF" />, name: 'Vite', link: 'https://vitejs.dev/' },
-  { icon: <SiReactquery size={50} color="#FF4154" />, name: 'TanStack Query', link: 'https://tanstack.com/query/latest' },
-];
+import React from "react";
+import { motion } from "framer-motion";
 
 const TechStackDisplay = () => {
+  const techItems = [
+    {
+      icon: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/mongodb-colored.svg",
+      name: "MongoDB",
+    },
+    {
+      icon: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/react-colored.svg",
+      name: "React",
+    },
+    {
+      icon: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/nodejs-colored.svg",
+      name: "Node.js",
+    },
+    {
+      icon: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/redux-colored.svg",
+      name: "Redux",
+    },
+    {
+      icon: "https://www.prisma.io/images/favicon-32x32.png",
+      name: "Prisma",
+    },
+    // {
+    //   icon: "https://reactrouter.com/_brand/react-router-mark-color.svg",
+    //   name: "React Router",
+    // },
+    // {
+    //   icon: "https://raw.githubusercontent.com/TanStack/query/main/media/logo.svg",
+    //   name: "React Query",
+    // },
+  ];
+
   return (
-    <div className={styles.techStackContainer}>
-      <div className={styles.techStack}>
-        {techItems.map((item, index) => (
-          <a key={index} href={item.link} target="_blank" rel="noopener noreferrer" className={styles.techItem}>
-            {item.icon}
-            <span>{item.name}</span>
-          </a>
-        ))}
-      </div>
+    <div className="relative overflow-hidden py-10  bg-gradient-to-r from-gray-900/60 via-black/40 to-gray-900/60">
+      <motion.div
+        className="flex"
+        animate={{
+          x: [0, -1035],
+        }}
+        transition={{
+          x: {
+            repeat: Infinity,
+            repeatType: "loop",
+            duration: 25,
+            ease: "linear",
+          },
+        }}
+      >
+        <div className="flex gap-x-16 px-4">
+          {[...techItems, ...techItems].map((item, index) => (
+            <div
+              key={index}
+              className="flex items-center gap-x-6 w-64 group"
+            >
+              <div className="flex items-center m-2 justify-center w-16 h-20 rounded-lg  p-2 transition-colors duration-200">
+                <img
+                  src={item.icon}
+                  alt={item.name}
+                  className="w-10 h-10 object-contain filter brightness-90 group-hover:brightness-110 transition-all duration-300"
+                />
+              </div>
+              <span className="text-lg font-semibold text-gray-400 group-hover:text-white whitespace-nowrap">
+                {item.name}
+              </span>
+            </div>
+          ))}
+        </div>
+      </motion.div>
+
+      {/* Gradient overlays */}
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-gray-800 to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-gray-800 to-transparent" />
     </div>
   );
 };

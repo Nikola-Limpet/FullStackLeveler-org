@@ -64,6 +64,15 @@
   min-width: 100vw;
 }
 
+.spaceMonoBoldItalic {
+  font-family: 'Space Mono', monospace;
+  font-style: italic;
+}
+
+.headerText {
+  color: rgba(255, 255, 255, 0.9);
+}
+
 .buttonContainer {
   display: inline-block;
   position: relative;
@@ -134,7 +143,7 @@
     color: #bd314e;
     font-size: 2rem;
     position: absolute;
-    margin-top: 120px;
+    margin-top: 140px;
     left: 190px;
     animation: fadeIn 1s 1.7s backwards;
     opacity: 0.8;

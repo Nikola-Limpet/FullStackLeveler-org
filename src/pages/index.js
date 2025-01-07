@@ -7,7 +7,7 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
 import TechStackDisplay from '../components/TechStackDisplay';
-import Card from '../components/Cards/Cards';
+import CourseSection from '../components/Cards/CourseSection';
 
 function HomepageHeader() {
   return (
@@ -28,8 +28,7 @@ function HomepageHeader() {
           </Heading>
           <div
             className={clsx(
-              'prose prose-lg md:prose-lg mx-auto mt-10 mb-2 space-y-4',
-              styles.akayaKanadakaRegular,
+              'prose prose-lg md:prose-lg mx-auto mt-10 mb-0 space-y-4',
               styles.headerText
             )}
           >
@@ -76,7 +75,7 @@ export default function Home() {
       >
         <TechStackDisplay />
         <HomepageFeatures />
-        <Card />
+        <CourseSection />
       </main>
     </Layout>
   );
